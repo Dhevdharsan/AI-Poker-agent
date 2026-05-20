@@ -8,26 +8,6 @@ This is the full development story: the ideas that worked, the ones that didn't,
 
 ---
 
-## Tournament Results
-
-The agent competed in a class-wide tournament: **64,000 hands** across 200 games of 10 hands each against every other team, played duplicate-style (both agents play the same fixed hands) to eliminate luck.
-
-| Rank | Group | Avg Gain |
-|------|-------|----------|
-| 1  | Group 1  | +148.01 |
-| 2  | Group 14 | +129.38 |
-| 3  | Spring 2025 Agent 2 | +124.29 |
-| 4  | Group 13 | +124.08 |
-| 5  | Group 11 | +72.38  |
-| ... | ... | ... |
-| **12** | **Group 9 (us)** | **-28.02** |
-| 15 | Random Agent | -212.75 |
-| 17 | Group 4 | -244.86 |
-
-We placed **12th out of 17**, with a positive margin over the random agent and two of the bottom teams. Not what we hoped for — but the post-mortem revealed concrete, fixable bugs rather than a fundamentally broken design. More on that at the end.
-
----
-
 ## The Journey
 
 ### Phase 0 — Where We Started
