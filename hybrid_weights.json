@@ -1,0 +1,16 @@
+{
+  "hand_strength": 8.816114442021373,
+  "pot_bucket": 3.96162896475226,
+  "pressure_bucket": -4.0034691125586725,
+  "opp_aggression": -1.9862336195986134,
+  "street_progress": 0.47551481421417524,
+  "pair_bonus": 3.9265849220448756,
+  "suited_bonus": 0.3666055812554683,
+  "connected_bonus": 0.7486761142020188,
+  "strong_raise_bonus": 1.1,
+  "semi_bluff_bonus": 0.8,
+  "weak_raise_penalty": -2.0,
+  "slow_play_bonus": 1.4003072300968327,
+  "weak_call_penalty": -1.4,
+  "fold_bias": -0.7737812632592699
+}
