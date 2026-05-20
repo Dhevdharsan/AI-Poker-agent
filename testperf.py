@@ -11,7 +11,6 @@ from strong_rule_player import StrongRulePlayer as StrongRulePlayer2
 from randomplayer import RandomPlayer
 from raise_player import RaisedPlayer
 from pypokerengine.players import BasePokerPlayer
-from v2_player import V2Player
 from always_raise import AlwaysRaisePlayer
 try:
     from mcts_player import MCTSPlayer
@@ -79,13 +78,13 @@ class StrongRulePlayer(BasePokerPlayer):
 """
 How to run:
 
-  RaisedPlayer vs RandomPlayer:
-    python3 testperf.py -n1 "RaisedPlayer" -a1 RaisedPlayer -n2 "Random" -a2 RandomPlayer
+  GauntletAgent vs RandomPlayer:
+    python3 testperf.py -n1 "GauntletAgent" -a1 RaisedPlayer -n2 "Random" -a2 RandomPlayer
 
-  RaisedPlayer vs StrongRulePlayer:
-    python3 testperf.py -n1 "RaisedPlayer" -a1 RaisedPlayer -n2 "StrongRule" -a2 StrongRulePlayer
+  GauntletAgent vs StrongRulePlayer:
+    python3 testperf.py -n1 "GauntletAgent" -a1 RaisedPlayer -n2 "StrongRule" -a2 StrongRulePlayer
 
-  RaisedPlayer vs itself (~50/50 sanity check):
+  GauntletAgent vs itself (~50/50 sanity check):
     python3 testperf.py -n1 "Agent1" -a1 RaisedPlayer -n2 "Agent2" -a2 RaisedPlayer
 """
 
@@ -94,7 +93,6 @@ AGENT_MAP = {
     "RandomPlayer":      RandomPlayer,
     "StrongRulePlayer":  StrongRulePlayer,
     "StrongRulePlayer2": StrongRulePlayer2,
-    "V2Player":          V2Player,
     "AlwaysRaisePlayer": AlwaysRaisePlayer,
 }
 if MCTSPlayer is not None:
