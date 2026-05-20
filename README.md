@@ -125,7 +125,7 @@ All triggers use a deterministic hash of game state + a salt integer rather than
 
 ### Phase 6 — Preflop Table & Persistent Opponent Modeling
 
-**Preflop equity table (`memoization_table.json`).** Rather than running Monte Carlo on every preflop action, we precomputed win rates for all canonical starting hands offline. The agent looks up its hand in O(1) instead of spending 50–100ms on MC simulations. A lookup table of premium hand equities (AA, KK, …, KQo) is also consulted first to keep top hands precise without simulation overhead.
+**Preflop equity table (`memoization_table.json`).** Rather than running Monte Carlo on every preflop action, we precomputed win rates for all 2,652 ordered hole-card pairs offline — every specific suit-and-rank combination (e.g., `('CA', 'C2')`) — each estimated from 100,000 Monte Carlo simulations, totalling ~265 million simulations computed offline. The agent looks up its exact dealt cards in O(1) at runtime. Both orderings of each pair are stored so the lookup succeeds regardless of which card is listed first. A small hardcoded table of premium hand equities (AA, KK, …, KQo) acts as a fallback if the lookup misses.
 
 **Post-flop Monte Carlo.** The fast closed-form heuristic is replaced post-flop by time-bounded Monte Carlo rollouts inside a 0.10s budget (batches of 10 simulations until time runs out). This gives a sharper estimate of win probability once community cards are visible. Empirically, MAE is ~0.92% at 0.10s vs ground truth at 0.45s — accurate enough for decision-making without eating into the 0.5s turn limit.
 
